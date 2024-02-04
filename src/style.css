@@ -8,6 +8,13 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+:root {
+  --dc-primary: #0c7dedFF;
+  --dc-light: white;
+  --dc-dark: #313130;
+  --dc-black: #1D1C1D;
+}
+
 .container {
   width: 70%;
   display: flex;
