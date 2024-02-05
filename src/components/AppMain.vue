@@ -1,9 +1,12 @@
 <script>
 import ComicCards from './ComicCards.vue'
+import DcBanner from './DcBanner.vue'
+
 export default {
     name: 'AppMain',
     components: {
         ComicCards,
+        DcBanner,
     },
     data() {
         return {
@@ -80,6 +83,28 @@ export default {
                     "series": "Catwoman",
                     "type": "graphic novel"
                 }
+            ],
+            banners: [
+                {
+                    "text": "Digital Comics",
+                    "icon": "/IMG/buy-comics-digital-comics.png"
+                },
+                {
+                    "text": "Dc merchandise",
+                    "icon": "/IMG/buy-comics-merchandise.png"
+                },
+                {
+                    "text": "Subscription",
+                    "icon": "/IMG/buy-comics-subscriptions.png"
+                },
+                {
+                    "text": "Comic Shop locator",
+                    "icon": "/IMG/buy-comics-shop-locator.png"
+                },
+                {
+                    "text": "Dc power visa",
+                    "icon": "/IMG/buy-dc-power-visa.svg"
+                }
             ]
         }
     },
@@ -96,6 +121,16 @@ export default {
             <div class="row">
                 <div class="col-2" v-for="comic in comics">
                     <ComicCards :image="comic.thumb" :title="comic.series"></ComicCards>
+                </div>
+            </div>
+        </div>
+        <div class="loadmore">
+            <button>LOAD MORE</button>
+        </div>
+        <div class="dc-banner">
+            <div class="container">
+                <div class="icons" v-for="banner in banners">
+                    <DcBanner :icon="banner.icon" :text="banner.text"></DcBanner>
                 </div>
             </div>
         </div>
@@ -126,5 +161,28 @@ main {
 .col-2 {
     width: calc(100% / 12 * 2);
     padding: 1rem;
+}
+
+.loadmore {
+    margin: auto;
+    text-align: center;
+}
+
+button {
+    background-color: var(--dc-primary);
+    padding: 0.5rem 4rem;
+    color: var(--dc-light);
+    font-weight: 700;
+}
+
+.dc-banner {
+    background-color: var(--dc-primary);
+    margin-top: 2rem;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 </style>
