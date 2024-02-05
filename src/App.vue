@@ -4,12 +4,12 @@ import AppMain from './components/AppMain.vue'
 import AppFooter from './components/AppFooter.vue'
 
 export default {
-  name: 'App'
-};
-components: {
-  AppHeader,
+  name: 'App',
+  components: {
+    AppHeader,
     AppMain,
-    AppFooter
+    AppFooter,
+  },
 }
 </script>
 
